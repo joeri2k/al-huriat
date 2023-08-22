@@ -1,0 +1,281 @@
+:root {
+  --primary: #87cefa;
+  --secondary: #3950a3;
+  --dark-red: #bc274f;
+  --darker-red: #941b3b;
+  --darker-secondary: #2b408d;
+}
+
+#root {
+  width: 100vw;
+  color: var(--secondary);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+p {
+  font-size: 22px;
+}
+
+.headerContainer {
+  width: 100%;
+  height: 185px;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 70%;
+}
+
+.secondary {
+  color: var(--secondary);
+}
+
+.logoName {
+  color: white;
+  font-size: 30px;
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary);
+  height: 55px;
+  width: 55px;
+  padding: 5px;
+  border-radius: 100%;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.infoText {
+  font-size: 16px;
+  margin-top: 5px;
+  color: white;
+  margin-bottom: 0px;
+  font-family: "Krub", sans-serif;
+}
+
+.mr-15 {
+  margin-right: 15px;
+}
+
+.offcanvas {
+  background-color: var(--secondary);
+}
+
+.navBox {
+  width: 65%;
+  display: flex;
+  justify-content: center;
+}
+
+.navContainer {
+  width: 100%;
+  height: 95px;
+  align-items: center;
+  display: flex;
+  background-color: var(--secondary);
+}
+
+.navButton {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  width: 180px;
+  height: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navButton:hover {
+  background-color: var(--darker-secondary);
+  color: white;
+}
+
+.redBg {
+  background-color: var(--dark-red);
+}
+
+.redBg:hover {
+  background-color: var(--darker-red);
+}
+
+.imageStyle {
+  height: 525px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-color: grey;
+  display: flex;
+  padding-left: 9%;
+  padding-top: 5%;
+}
+
+.catchingPhrase {
+  color: white;
+  font-family: Krub;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 600;
+  width: 50%;
+  line-height: 135.023%; /* 86.415px */
+}
+
+.frontImageBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.guideStyle {
+  width: 8px;
+  height: 30px;
+  background: linear-gradient(123deg, #1a852d 0%, #25be40 50.72%, #0efc38 100%);
+}
+
+.guideTextBox {
+  display: flex;
+  width: fit-content;
+  height: 30px;
+  padding: 3px 9px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(232, 232, 232, 0.5);
+}
+
+.guideText {
+  color: var(--darker-secondary);
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subPhrase {
+  color: #ffffffbb;
+  font-size: 25px;
+  font-weight: lighter;
+  margin-top: 10px;
+  line-height: 135.023%; /* 37.806px */
+}
+
+.serviceContainer {
+  padding: 30px 0px 30px 0px;
+  border-top: solid 1px #d6d6d6;
+}
+
+.serviceItem {
+  display: flex;
+}
+
+.serviceImg {
+  height: 300px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 450px;
+}
+
+.seperator {
+  width: 1px;
+  background-color: #d6d6d6;
+  margin-left: 13%;
+  margin-right: 30px;
+}
+
+.serviceContent {
+  display: flex;
+  flex-direction: column;
+  max-width: 330px;
+}
+
+.servicesBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.formContainer {
+  display: flex;
+  width: 100%;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.formBox {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.textField {
+  padding: 12px;
+  border-radius: 4px;
+  background: #f4f4f4;
+  border: 0;
+  width: 100%;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.submitButton {
+  margin-top: 20px;
+  width: 100px;
+  height: 35px;
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.map-container {
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .navBox {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+  }
+
+  p {
+    font-size: 10px;
+  }
+  h1 {
+    font-size: 18px;
+  }
+}
