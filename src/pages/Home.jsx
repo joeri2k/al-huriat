@@ -3,8 +3,8 @@ import Slider from "../components/Slider";
 
 function Home() {
   const slides = [
-    { url: "src/assets/printing.webp", title: "test" },
-    { url: "src/assets/lamp.webp", title: "test2" },
+    { url: "public/assets/printing.webp", title: "test" },
+    { url: "public/assets/lamp.webp", title: "test2" },
   ];
   return (
     <div>
@@ -58,7 +58,7 @@ function Home() {
             </p>
           </div>
           <img
-            src="src/assets/printing.webp"
+            src="public/assets/printing.webp"
             style={{ height: "333px", width: "600px", marginTop: "70px" }}
           />
         </div>

@@ -6,7 +6,7 @@ function Services() {
   return (
     <div>
       <TopImage
-        image_url="src/assets/printing.webp"
+        image_url="public/assets/printing.webp"
         catching_phrase="Choose. Customize. Order."
         guide="Our Services"
         sub_phrase="Craft Your Business Identity in Just Three Simple Steps."
@@ -38,7 +38,10 @@ function Services() {
               selection of papers, designs and finishing
             </p>
           </div>
-          <img src="src/assets/business-card.jpeg" style={{ width: "35%" }} />
+          <img
+            src="public/assets/business-card.jpeg"
+            style={{ width: "35%" }}
+          />
         </div>
       </div>
       <div
@@ -59,7 +62,7 @@ function Services() {
             justifyContent: "space-between",
           }}
         >
-          <img src="src/assets/brochures.jpeg" style={{ width: "35%" }} />
+          <img src="public/assets/brochures.jpeg" style={{ width: "35%" }} />
           <div style={{ width: "600px" }}>
             <h1 style={{ fontWeight: "600", marginBottom: "20px" }}>
               Brochures/Flyers
@@ -98,7 +101,7 @@ function Services() {
               materials stand out
             </p>
           </div>
-          <img src="src/assets/packaging.jpeg" style={{ width: "35%" }} />
+          <img src="public/assets/packaging.jpeg" style={{ width: "35%" }} />
         </div>
       </div>
       <div
@@ -119,7 +122,7 @@ function Services() {
             justifyContent: "space-between",
           }}
         >
-          <img src="src/assets/envelops.jpeg" style={{ width: "35%" }} />
+          <img src="public/assets/envelops.jpeg" style={{ width: "35%" }} />
           <div style={{ width: "600px" }}>
             <h1 style={{ fontWeight: "600", marginBottom: "20px" }}>
               Envelops
@@ -157,7 +160,7 @@ function Services() {
               will help you bring your books to life
             </p>
           </div>
-          <img src="src/assets/books.jpeg" style={{ width: "35%" }} />
+          <img src="public/assets/books.jpeg" style={{ width: "35%" }} />
         </div>
       </div>
       <div
@@ -178,7 +181,7 @@ function Services() {
             justifyContent: "space-between",
           }}
         >
-          <img src="src/assets/stickers.jpeg" style={{ width: "35%" }} />
+          <img src="public/assets/stickers.jpeg" style={{ width: "35%" }} />
           <div style={{ width: "600px" }}>
             <h1 style={{ fontWeight: "600", marginBottom: "20px" }}>
               Stickers/Vinil
@@ -218,7 +221,7 @@ function Services() {
               formats and numbering
             </p>
           </div>
-          <img src="src/assets/forms.jpeg" style={{ width: "35%" }} />
+          <img src="public/assets/forms.jpeg" style={{ width: "35%" }} />
         </div>
       </div>
     </div>
