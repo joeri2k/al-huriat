@@ -7,7 +7,7 @@ function Requests() {
   return (
     <div>
       <TopImage
-        image_url="public/assets/printing.webp"
+        image_url="/assets/printing.webp"
         catching_phrase="Ready to get your next project started?"
         guide="Requests"
         sub_phrase="From concept to finished product, your project is our priority."

@@ -12,14 +12,14 @@ function Slider() {
         <SplideSlide>
           <div
             className="imageStyle"
-            style={{ backgroundImage: 'url("src/assets/printing.webp")' }}
+            style={{ backgroundImage: 'url("/assets/printing.webp")' }}
           ></div>
         </SplideSlide>
         <SplideSlide>
           <div
             className="imageStyle"
             style={{
-              backgroundImage: 'url("src/assets/lamp.webp")',
+              backgroundImage: 'url("/assets/lamp.webp")',
             }}
           ></div>
         </SplideSlide>

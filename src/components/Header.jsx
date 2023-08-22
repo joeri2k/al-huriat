@@ -10,7 +10,7 @@ function Header() {
           <div className="infoCircle mr-15">
             <img
               style={{ width: "30px", height: "22.5px" }}
-              src="src/assets/email.svg"
+              src="/assets/email.svg"
             ></img>
           </div>
           <div className="flex-col" style={{ justifyContent: "center" }}>
@@ -22,7 +22,7 @@ function Header() {
           <div className="infoCircle mr-15">
             <img
               style={{ width: "40px", height: "28px" }}
-              src="src/assets/phone.svg"
+              src="/assets/phone.svg"
             ></img>
           </div>
           <div className="flex-col" style={{ justifyContent: "center" }}>
@@ -35,7 +35,7 @@ function Header() {
           <div className="infoCircle mr-15">
             <img
               style={{ width: "40px", height: "28px" }}
-              src="src/assets/location.svg"
+              src="/assets/location.svg"
             ></img>
           </div>
           <div className="flex-col" style={{ justifyContent: "center" }}>
