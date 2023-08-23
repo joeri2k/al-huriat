@@ -59,12 +59,16 @@ function Home() {
           </div>
           <img
             src="/assets/printing.webp"
-            style={{ height: "333px", width: "600px", marginTop: "70px" }}
+            style={styles.bottomImage}
           />
         </div>
       </div>
     </div>
   );
+}
+
+const styles = {
+  bottomImage: { height: "333px", width: "600px", marginTop: "70px" }
 }
 
 export default Home;
