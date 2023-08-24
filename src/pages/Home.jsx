@@ -2,14 +2,8 @@ import React from "react";
 import Slider from "../components/Slider";
 
 function Home() {
-  const slides = [
-    { url: "/assets/printing.webp", title: "test" },
-    { url: "/assets/lamp.webp", title: "test2" },
-  ];
-
   return (
     <div>
-      {/* <Slider slides={slides} height="525px" width="100%" /> */}
       <div style={{ height: "520px" }}>
         <Slider />
       </div>
