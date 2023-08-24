@@ -1,26 +1,15 @@
-// import React from "react";
-// import "../App.css";
-
-// function Navigation() {
-//   return (
-//     <div className="navContainer">
-//       <div>
-//         <button>Home</button>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Navigation;
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { useLocation } from "react-router-dom";
 
 const expand = "md";
 
-function Navigation() {
+function Navigation(props) {
+  const location = useLocation();
+
   return (
     <div className="navContainer">
       <div className="navBox">
@@ -41,18 +30,30 @@ function Navigation() {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link className="navButton" href="/">
                     Home
+                    {location.pathname === "/" && (
+                      <div className="navMark"></div>
+                    )}
                   </Nav.Link>
                   <Nav.Link className="navButton" href="/services">
                     Services
+                    {location.pathname === "/services" && (
+                      <div className="navMark"></div>
+                    )}
                   </Nav.Link>
                   <Nav.Link
                     className="navButton redBg"
                     href="/request-printing"
                   >
                     Request Printing
+                    {location.pathname === "/request-printing" && (
+                      <div className="navMark"></div>
+                    )}
                   </Nav.Link>
                   <Nav.Link className="navButton" href="/contact-us">
                     Contact Us
+                    {location.pathname === "/contact-us" && (
+                      <div className="navMark"></div>
+                    )}
                   </Nav.Link>
                   {/* <NavDropdown
                   title="Dropdown"

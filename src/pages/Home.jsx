@@ -6,6 +6,7 @@ function Home() {
     { url: "/assets/printing.webp", title: "test" },
     { url: "/assets/lamp.webp", title: "test2" },
   ];
+
   return (
     <div>
       {/* <Slider slides={slides} height="525px" width="100%" /> */}

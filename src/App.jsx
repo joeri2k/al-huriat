@@ -12,10 +12,10 @@ import Contact from "./pages/Contact";
 function App() {
   return (
     <>
-      <Header />
-      <Navigation />
       <React.StrictMode>
         <Router>
+          <Header />
+          <Navigation />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/services" element={<Services />} />

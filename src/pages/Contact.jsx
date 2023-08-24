@@ -12,7 +12,6 @@ function Contact() {
     email: "",
     name: "",
     message: "",
-    test: "",
   });
   const handleOnChange = (event) => {
     event.persist();
@@ -35,7 +34,6 @@ function Contact() {
           email: "",
           name: "",
           message: "",
-          test: "",
         }));
       })
       .catch((r) => {
@@ -151,23 +149,7 @@ function Contact() {
                   type="text"
                 />
               </label>
-              <label
-                style={{
-                  color: "#6F7482",
-                  marginBottom: "15px",
-                }}
-              >
-                test
-                <input
-                  name="test"
-                  placeholder="test"
-                  className="textField"
-                  onChange={handleOnChange}
-                  value={inputs.test}
-                  id="test"
-                  type="text"
-                />
-              </label>
+
               <label
                 style={{
                   color: "#6F7482",
@@ -185,22 +167,7 @@ function Contact() {
                   className="textField"
                 />
               </label>
-              <label
-                style={{
-                  color: "#6F7482",
-                }}
-              >
-                Phone Number
-                <input
-                  onChange={handleOnChange}
-                  value={inputs.phone}
-                  id="phone"
-                  type="text"
-                  name="phone"
-                  placeholder="Phone Number"
-                  className="textField"
-                />
-              </label>
+
               <button className="submitButton" type="submit" value="Submit">
                 Submit
               </button>
