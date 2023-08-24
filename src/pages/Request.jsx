@@ -34,22 +34,25 @@ function Requests() {
               >
                 Name
                 <input
-                  type="text"
                   name="name"
                   placeholder="Name"
                   className="textField"
+                  id="name"
+                  type="text"
                 />
               </label>
               <label
                 style={{
                   color: "#6F7482",
+                  marginBottom: "15px",
                 }}
               >
-                Name
+                Email
                 <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
                   className="textField"
                 />
               </label>
@@ -70,11 +73,11 @@ function Requests() {
                   marginBottom: "15px",
                 }}
               >
-                Name
+                Phone Number
                 <input
                   type="text"
-                  name="name"
-                  placeholder="Name"
+                  name="Phone Number"
+                  placeholder="Phone Number"
                   className="textField"
                 />
               </label>
@@ -83,13 +86,21 @@ function Requests() {
                   color: "#6F7482",
                 }}
               >
-                Name
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  className="textField"
-                />
+                Products
+                <select name="name" placeholder="Name" className="textField">
+                  <option value="b-card">Business Card</option>
+                  <option value="brochure">Brochure</option>
+                  <option value="flyer">Flyer</option>
+                  <option value="p-bags">Paper Bags</option>
+                  <option value="folders">Folders</option>
+                  <option value="envelops">Envelops</option>
+                  <option value="booklet">Booklet</option>
+                  <option value="book">Book</option>
+                  <option value="stickers">Stickers</option>
+                  <option value="vinil">Vinil</option>
+                  <option value="b-forms">Business Forms</option>
+                  <option value="other">Other</option>
+                </select>
               </label>
             </div>
           </form>
