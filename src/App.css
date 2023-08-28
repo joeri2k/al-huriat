@@ -33,6 +33,12 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  width: 80%;
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: space-around;
   width: 70%;
 }
 
@@ -61,6 +67,11 @@ p {
   width: 55px;
   padding: 5px;
   border-radius: 100%;
+}
+
+.infoIcon {
+  width: 30px;
+  height: 22.5px;
 }
 
 .flex-col {
@@ -275,6 +286,31 @@ p {
   bottom: 0;
 }
 
+.homeImage {
+  height: 333px;
+  width: 600px;
+  margin-top: 70px;
+}
+
+.homeContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 40%;
+}
+
+.homeBox {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.overviewBox {
+  width: 600px;
+}
+
 @media only screen and (max-width: 1000px) {
   .navBox {
     width: 100%;
@@ -287,5 +323,57 @@ p {
   }
   h1 {
     font-size: 18px;
+  }
+  .infoContainer {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .infoCircle {
+    height: 30px;
+    width: 30px;
+    padding: 2px;
+    border-radius: 100%;
+  }
+  .infoIcon {
+    width: 25px;
+    height: 12.5px;
+  }
+  .infoText {
+    font-size: 10px;
+    margin-top: 2px;
+    color: white;
+    margin-bottom: 0px;
+    font-family: "Krub", sans-serif;
+  }
+  .logoName {
+    font-size: 20px;
+  }
+
+  .homeImage {
+    height: 150px;
+    width: 300px;
+    margin-top: 20px;
+  }
+
+  .homeContainer {
+    display: flex;
+    justify-content: start;
+    padding: 10px;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .homeBox {
+    padding-top: 30px;
+    padding-bottom: 0px;
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .overviewBox {
+    width: 350px;
   }
 }

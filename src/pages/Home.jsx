@@ -7,24 +7,9 @@ function Home() {
       <div style={{ height: "520px" }}>
         <Slider />
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          width: "100%",
-          height: "40%",
-        }}
-      >
-        <div
-          style={{
-            paddingTop: "90px",
-            paddingBottom: "90px",
-            width: "70%",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <div style={{ width: "600px" }}>
+      <div className="homeContainer">
+        <div className="homeBox">
+          <div className="overviewBox">
             <h1 style={{ fontWeight: "600", marginBottom: "20px" }}>
               Our Company Overview
             </h1>
@@ -52,10 +37,7 @@ function Home() {
               to date machinery.
             </p>
           </div>
-          <img
-            src="/assets/printing.webp"
-            style={{ height: "333px", width: "600px", marginTop: "70px" }}
-          />
+          <img src="/assets/printing.webp" className="homeImage" />
         </div>
       </div>
     </div>
