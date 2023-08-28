@@ -32,7 +32,7 @@ function Questions(props) {
                 name={question.question}
                 placeholder={question.placeholder}
                 className="textField"
-                id="name"
+                onChange={props.handleChange}
                 type={question.type}
               />
             </>
@@ -41,8 +41,8 @@ function Questions(props) {
               <input
                 name={question.question}
                 placeholder={question.question}
-                id="name"
                 style={{ marginRight: "5px" }}
+                onChange={props.handleChange}
                 type={question.type}
               />
               <label
@@ -62,7 +62,12 @@ function Questions(props) {
               >
                 {question.question}
               </label>
-              <select name="name" placeholder="Name" className="textField">
+              <select
+                name={question.question}
+                placeholder={question.question}
+                onChange={props.handleChange}
+                className="textField"
+              >
                 {question.options.map((option) => (
                   <option value={option.value}> {option.label}</option>
                 ))}
@@ -79,8 +84,9 @@ function Questions(props) {
                 Additional information
               </label>
               <textarea
-                id="message"
-                name="message"
+                id="info"
+                name="additional info"
+                onChange={props.handleChange}
                 placeholder="Type additional information"
                 rows={5}
                 className="textField"

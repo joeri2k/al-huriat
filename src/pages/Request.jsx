@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import TopImage from "../components/TopImage";
 import Questions from "../components/Questions";
+import axios from "axios";
 
 function Requests() {
   const urlText =
@@ -502,6 +503,34 @@ function Requests() {
       ],
     },
   };
+  const [formData, setFormData] = useState({});
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = document.getElementById("requestPrint");
+
+    axios({
+      method: "POST",
+      url: "https://formbold.com/s/3Oede",
+      data: formData,
+    })
+      .then((r) => {
+        alert("Thank you, your form was submitted.");
+        setFormData(() => ({}));
+        form.reset();
+      })
+      .catch((r) => {
+        console.log("error", r);
+        alert("An error occurred while submitting the form.");
+      });
+  };
   return (
     <div>
       <TopImage
@@ -515,6 +544,8 @@ function Requests() {
           <h1 style={{ fontWeight: "600" }}>Requests</h1>
 
           <form
+            id="requestPrint"
+            onSubmit={handleSubmit}
             style={{
               width: "100%",
               display: "flex",
@@ -544,6 +575,7 @@ function Requests() {
                     className="textField"
                     id="name"
                     type="text"
+                    onChange={handleInputChange}
                   />
                 </label>
                 <label
@@ -558,6 +590,7 @@ function Requests() {
                     type="email"
                     name="email"
                     placeholder="Email"
+                    onChange={handleInputChange}
                     className="textField"
                   />
                 </label>
@@ -574,6 +607,7 @@ function Requests() {
                     type="text"
                     name="Phone Number"
                     placeholder="Phone Number"
+                    onChange={handleInputChange}
                     className="textField"
                   />
                 </label>
@@ -584,9 +618,12 @@ function Requests() {
                 >
                   Products
                   <select
-                    onChange={handleProductChange}
-                    name="name"
-                    placeholder="Name"
+                    onChange={(event) => {
+                      handleInputChange(event);
+                      handleProductChange(event);
+                    }}
+                    name="Product"
+                    placeholder="Product"
                     className="textField"
                   >
                     <option value="b_card">Business Card</option>
@@ -608,15 +645,19 @@ function Requests() {
             <h4 style={{ marginTop: "20px", width: "100%" }}>
               Fill in your details:
             </h4>
-            <Questions product={products[product]} />
+            <Questions
+              product={products[product]}
+              handleChange={handleInputChange}
+            />
             <input
               className="submitButton"
               type="submit"
               value="Submit"
-              onClick={(event) => {
-                event.preventDefault();
-                window.open(urlText, "_self");
-              }}
+              // onClick={(event) => {
+              //   event.preventDefault();
+              //   window.open(urlText, "_self");
+              // }}
+              onClick={handleSubmit}
             />
           </form>
         </div>
