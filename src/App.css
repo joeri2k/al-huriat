@@ -353,7 +353,7 @@ p {
   .homeImage {
     height: 150px;
     width: 300px;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .homeContainer {
@@ -375,5 +375,11 @@ p {
 
   .overviewBox {
     width: 350px;
+  }
+  .headerContainer {
+    height: 150px;
+  }
+  .navContainer {
+    height: 60px;
   }
 }
