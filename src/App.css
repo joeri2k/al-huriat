@@ -292,6 +292,14 @@ p {
   margin-top: 70px;
 }
 
+.serviceBox {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .homeContainer {
   display: flex;
   justify-content: center;
@@ -320,6 +328,7 @@ p {
 
   p {
     font-size: 10px;
+    margin-bottom: 10px;
   }
   h1 {
     font-size: 18px;
@@ -369,7 +378,7 @@ p {
     padding-bottom: 0px;
     width: fit-content;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     flex-direction: column;
   }
 
@@ -381,5 +390,22 @@ p {
   }
   .navContainer {
     height: 60px;
+  }
+
+  .catchingPhrase {
+    font-size: 35px;
+    width: 100%;
+  }
+  .subPhrase {
+    font-size: 18px;
+
+    margin-top: 20px;
+  }
+
+  .serviceBox {
+    padding: 30px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
   }
 }

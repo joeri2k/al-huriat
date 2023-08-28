@@ -20,16 +20,8 @@ function Services() {
           height: "40%",
         }}
       >
-        <div
-          style={{
-            paddingTop: "90px",
-            paddingBottom: "90px",
-            width: "70%",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <div style={{ width: "600px" }}>
+        <div className="serviceBox">
+          <div style={{ width: "60%" }}>
             <h1 style={{ fontWeight: "600", marginBottom: "20px" }}>
               Business Cards
             </h1>
@@ -50,17 +42,9 @@ function Services() {
           backgroundColor: "#f4f4f4",
         }}
       >
-        <div
-          style={{
-            paddingTop: "90px",
-            paddingBottom: "90px",
-            width: "70%",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
+        <div className="serviceBox">
           <img src="/assets/brochures.jpeg" style={{ width: "35%" }} />
-          <div style={{ width: "600px" }}>
+          <div style={{ width: "60%" }}>
             <h1 style={{ fontWeight: "600", marginBottom: "20px" }}>
               Brochures/Flyers
             </h1>
@@ -79,16 +63,8 @@ function Services() {
           height: "40%",
         }}
       >
-        <div
-          style={{
-            paddingTop: "90px",
-            paddingBottom: "90px",
-            width: "70%",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <div style={{ width: "600px" }}>
+        <div className="serviceBox">
+          <div style={{ width: "60%" }}>
             <h1 style={{ fontWeight: "600", marginBottom: "20px" }}>
               Packaging Materials
             </h1>
@@ -110,17 +86,9 @@ function Services() {
           backgroundColor: "#f4f4f4",
         }}
       >
-        <div
-          style={{
-            paddingTop: "90px",
-            paddingBottom: "90px",
-            width: "70%",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
+        <div className="serviceBox">
           <img src="/assets/envelops.jpeg" style={{ width: "35%" }} />
-          <div style={{ width: "600px" }}>
+          <div style={{ width: "60%" }}>
             <h1 style={{ fontWeight: "600", marginBottom: "20px" }}>
               Envelops
             </h1>
@@ -139,16 +107,8 @@ function Services() {
           height: "40%",
         }}
       >
-        <div
-          style={{
-            paddingTop: "90px",
-            paddingBottom: "90px",
-            width: "70%",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <div style={{ width: "600px" }}>
+        <div className="serviceBox">
+          <div style={{ width: "60%" }}>
             <h1 style={{ fontWeight: "600", marginBottom: "20px" }}>
               Books/Booklets
             </h1>
@@ -169,17 +129,9 @@ function Services() {
           backgroundColor: "#f4f4f4",
         }}
       >
-        <div
-          style={{
-            paddingTop: "90px",
-            paddingBottom: "90px",
-            width: "70%",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
+        <div className="serviceBox">
           <img src="/assets/stickers.jpeg" style={{ width: "35%" }} />
-          <div style={{ width: "600px" }}>
+          <div style={{ width: "60%" }}>
             <h1 style={{ fontWeight: "600", marginBottom: "20px" }}>
               Stickers/Vinil
             </h1>
@@ -199,16 +151,8 @@ function Services() {
           height: "40%",
         }}
       >
-        <div
-          style={{
-            paddingTop: "90px",
-            paddingBottom: "90px",
-            width: "70%",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <div style={{ width: "600px" }}>
+        <div className="serviceBox">
+          <div style={{ width: "60%" }}>
             <h1 style={{ fontWeight: "600", marginBottom: "20px" }}>
               Business Forms
             </h1>
