@@ -58,16 +58,8 @@ function Contact() {
           height: "40%",
         }}
       >
-        <div
-          style={{
-            paddingTop: "90px",
-            paddingBottom: "90px",
-            width: "70%",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <div style={{ width: "600px" }}>
+        <div className="locationBox">
+          <div style={{ width: "50%" }}>
             <h1 style={{ fontWeight: "600" }}>Our Location</h1>
             <p>
               However you'd like to work with us, we're ready. This site
@@ -78,7 +70,7 @@ function Contact() {
             </p>
             <p>enter location link for direction</p>
           </div>
-          <div style={{ height: "300px", width: "550px" }}>
+          <div style={{ height: "100%", width: "45%" }}>
             {!isLoaded ? (
               <h1>Loading...</h1>
             ) : (
@@ -120,77 +112,68 @@ function Contact() {
               any questions, suggestions or general feedback in the space below.
             </p>
           </div>
-          <form
-            onSubmit={handleSubmit}
-            id="contactUs"
-            style={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "row",
-              marginTop: "30px",
-              justifyContent: "space-between",
-            }}
-          >
-            <div className="formSection">
-              <label
-                style={{
-                  color: "#6F7482",
-                  marginBottom: "15px",
-                }}
-              >
-                Name
-                <input
-                  name="name"
-                  placeholder="Name"
-                  className="textField"
-                  onChange={handleOnChange}
-                  value={inputs.name}
-                  id="name"
-                  type="text"
-                />
-              </label>
+          <form onSubmit={handleSubmit} id="contactUs">
+            <div className="contactContainer">
+              <div className="formSection">
+                <label
+                  style={{
+                    color: "#6F7482",
+                    marginBottom: "15px",
+                  }}
+                >
+                  Name
+                  <input
+                    name="name"
+                    placeholder="Name"
+                    className="textField"
+                    onChange={handleOnChange}
+                    value={inputs.name}
+                    id="name"
+                    type="text"
+                  />
+                </label>
 
-              <label
-                style={{
-                  color: "#6F7482",
-                  marginBottom: "15px",
-                }}
-              >
-                Email
-                <input
-                  onChange={handleOnChange}
-                  value={inputs.email}
-                  id="email"
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  className="textField"
-                />
-              </label>
-
-              <button className="submitButton" type="submit" value="Submit">
-                Submit
-              </button>
+                <label
+                  style={{
+                    color: "#6F7482",
+                    marginBottom: "15px",
+                  }}
+                >
+                  Email
+                  <input
+                    onChange={handleOnChange}
+                    value={inputs.email}
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    className="textField"
+                  />
+                </label>
+              </div>
+              <div className="formSection">
+                <label
+                  style={{
+                    color: "#6F7482",
+                    marginBottom: "15px",
+                  }}
+                >
+                  Message
+                  <textarea
+                    onChange={handleOnChange}
+                    value={inputs.message}
+                    id="message"
+                    name="message"
+                    placeholder="Type your message"
+                    rows={5}
+                    className="textField"
+                  />
+                </label>
+              </div>
             </div>
-            <div className="formSection">
-              <label
-                style={{
-                  color: "#6F7482",
-                  marginBottom: "15px",
-                }}
-              >
-                Message
-                <textarea
-                  onChange={handleOnChange}
-                  value={inputs.message}
-                  id="message"
-                  name="message"
-                  placeholder="Type your message"
-                  rows={5}
-                  className="textField"
-                />
-              </label>
-            </div>
+            <button className="submitButton" type="submit" value="Submit">
+              Submit
+            </button>
           </form>
         </div>
       </div>

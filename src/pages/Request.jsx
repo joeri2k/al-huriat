@@ -552,15 +552,7 @@ function Requests() {
               flexDirection: "column",
             }}
           >
-            <div
-              style={{
-                width: "100%",
-                display: "flex",
-                flexDirection: "row",
-                marginTop: "30px",
-                justifyContent: "space-between",
-              }}
-            >
+            <div className="formWrapper">
               <div className="formSection">
                 <label
                   style={{

@@ -2,14 +2,7 @@ import React from "react";
 
 function Questions(props) {
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "grid",
-        gridTemplateColumns: "40% 40%",
-        columnGap: "20%",
-      }}
-    >
+    <div className="questionsContainer">
       {props.product.questions.map((question) => (
         <div
           style={{

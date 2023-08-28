@@ -300,11 +300,26 @@ p {
   justify-content: space-between;
 }
 
+.formWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+
 .homeContainer {
   display: flex;
   justify-content: center;
   width: 100%;
   height: 40%;
+}
+
+.questionsContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40% 40%;
+  column-gap: 20%;
 }
 
 .homeBox {
@@ -317,6 +332,22 @@ p {
 
 .overviewBox {
   width: 600px;
+}
+
+.contactContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+
+.locationBox {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -407,5 +438,33 @@ p {
     width: 95%;
     display: flex;
     justify-content: space-between;
+  }
+  .formBox {
+    width: 100%;
+  }
+  .formWrapper {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .formSection {
+    width: 100%;
+  }
+  .questionsContainer {
+    grid-template-columns: 100%;
+    column-gap: 0;
+  }
+
+  .locationBox {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+  }
+
+  .contactContainer {
+    flex-direction: column;
+    margin-top: 15px;
   }
 }
