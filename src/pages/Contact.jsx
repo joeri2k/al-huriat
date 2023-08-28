@@ -104,7 +104,7 @@ function Contact() {
             justifyContent: "space-between",
           }}
         >
-          <div style={{ width: "600px" }}>
+          <div style={{ width: "85%" }}>
             <h1 style={{ fontWeight: "600" }}>Contact Us</h1>
             <p>
               Have a comment, a question, a concern or just want to share
