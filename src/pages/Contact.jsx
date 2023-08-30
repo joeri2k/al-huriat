@@ -68,7 +68,16 @@ function Contact() {
               to see you. Our address and contact information are located on
               every page of our site.
             </p>
-            <p>enter location link for direction</p>
+            <p>
+              Click{" "}
+              <a
+                href="https://goo.gl/maps/2enSvsjFBUygmSeeA"
+                style={{ color: "#bc274f" }}
+              >
+                here
+              </a>{" "}
+              for directions
+            </p>
           </div>
           <div style={{ height: "100%", width: "45%" }}>
             {!isLoaded ? (
