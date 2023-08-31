@@ -212,14 +212,14 @@ p {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  width: 450px;
+  min-width: 300px;
 }
 
 .seperator {
   width: 1px;
   background-color: #d6d6d6;
-  margin-left: 13%;
-  margin-right: 30px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .serviceContent {
@@ -321,7 +321,13 @@ p {
   grid-template-columns: 40% 40%;
   column-gap: 20%;
 }
-
+.serviceGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 45% 45%;
+  column-gap: 5%;
+  justify-content: center;
+}
 .homeBox {
   padding-top: 90px;
   padding-bottom: 90px;
@@ -358,11 +364,14 @@ p {
   }
 
   p {
-    font-size: 10px;
-    margin-bottom: 10px;
+    font-size: 11px;
+    margin-bottom: 8px;
   }
   h1 {
-    font-size: 18px;
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 16px;
   }
   h4 {
     font-size: 14px;
@@ -469,5 +478,45 @@ p {
   .contactContainer {
     flex-direction: column;
     margin-top: 15px;
+  }
+
+  .serviceGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 95%;
+    column-gap: 0%;
+    justify-content: center;
+  }
+
+  .serviceImg {
+    height: 180px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-width: 180px;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1400px) {
+  p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+
+  .serviceImg {
+    height: 250px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-width: 250px;
   }
 }

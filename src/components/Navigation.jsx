@@ -5,7 +5,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useLocation } from "react-router-dom";
 
-const expand = "md";
+const expand = "lg";
 
 function Navigation(props) {
   const location = useLocation();
