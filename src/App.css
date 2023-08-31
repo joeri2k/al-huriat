@@ -288,7 +288,7 @@ p {
 
 .homeImage {
   height: 333px;
-  width: 600px;
+  width: 45%;
   margin-top: 70px;
 }
 
@@ -337,7 +337,7 @@ p {
 }
 
 .overviewBox {
-  width: 600px;
+  width: 45%;
 }
 
 .contactContainer {
