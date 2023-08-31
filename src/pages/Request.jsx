@@ -90,7 +90,12 @@ function Requests() {
           options: "",
           type: "number",
         },
-
+        {
+          question: "Number of pages",
+          placeholder: "Number of pages",
+          options: "",
+          type: "number",
+        },
         {
           question: "Size",
           placeholder: "Size",
@@ -143,9 +148,16 @@ function Requests() {
           ],
           type: "select",
         },
+
         {
           question: "Quantity",
           placeholder: "Quantity",
+          options: "",
+          type: "number",
+        },
+        {
+          question: "Number of pages",
+          placeholder: "Number of pages",
           options: "",
           type: "number",
         },
@@ -245,7 +257,12 @@ function Requests() {
           options: "",
           type: "number",
         },
-
+        {
+          question: "Number of pages",
+          placeholder: "Number of pages",
+          options: "",
+          type: "number",
+        },
         {
           question: "Size",
           placeholder: "Size",
@@ -518,7 +535,7 @@ function Requests() {
 
     axios({
       method: "POST",
-      url: "https://formbold.com/s/3Oede",
+      url: "https://formbold.com/s/3Zglp",
       data: formData,
     })
       .then((r) => {

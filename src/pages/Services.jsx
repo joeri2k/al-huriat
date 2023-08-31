@@ -11,8 +11,27 @@ function Services() {
         guide="Our Services"
         sub_phrase="Craft Your Business Identity in Just Three Simple Steps."
       />
-
       <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "row",
+          alignItems: "center",
+        }}
+      >
+        <ServiceItem
+          image_url="/assets/business-card.jpeg"
+          content="We will help you create your customized business cards from a wide selection of papers, designs and finishing"
+          title="Business Cards"
+        />
+        <ServiceItem
+          image_url="/assets/business-card.jpeg"
+          content="We will help you create your customized business cards from a wide selection of papers, designs and finishing"
+          title="Business Cards"
+        />
+      </div>
+
+      {/* <div
         style={{
           display: "flex",
           justifyContent: "center",
@@ -164,7 +183,7 @@ function Services() {
           </div>
           <img src="/assets/forms.jpeg" style={{ width: "35%" }} />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

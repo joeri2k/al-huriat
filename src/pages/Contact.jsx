@@ -25,7 +25,7 @@ function Contact() {
 
     axios({
       method: "POST",
-      url: "https://app.formbold.com/s/9EPVK",
+      url: "https://formbold.com/s/obqE8",
       data: inputs,
     })
       .then((r) => {

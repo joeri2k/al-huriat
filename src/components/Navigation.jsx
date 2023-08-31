@@ -40,10 +40,7 @@ function Navigation(props) {
                       <div className="navMark"></div>
                     )}
                   </Nav.Link>
-                  <Nav.Link
-                    className="navButton redBg"
-                    href="/request-printing"
-                  >
+                  <Nav.Link className="navButton" href="/request-printing">
                     Request Printing
                     {location.pathname === "/request-printing" && (
                       <div className="navMark"></div>
