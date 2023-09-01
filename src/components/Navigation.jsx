@@ -35,13 +35,13 @@ function Navigation(props) {
                     )}
                   </Nav.Link>
                   <Nav.Link className="navButton" href="/services">
-                    Services
+                    Products
                     {location.pathname === "/services" && (
                       <div className="navMark"></div>
                     )}
                   </Nav.Link>
                   <Nav.Link className="navButton" href="/request-printing">
-                    Request Printing
+                    Printing Request
                     {location.pathname === "/request-printing" && (
                       <div className="navMark"></div>
                     )}

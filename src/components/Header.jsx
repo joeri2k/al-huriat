@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className="headerContainer">
       <div className="headerBox">
-        <h1 className="logoName">Al-Huriat Printing</h1>
+        <h1 className="logoName">Al Huriat Printing</h1>
         <div className="infoContainer">
           <div className="infoBox">
             <div className="infoCircle mr-15">

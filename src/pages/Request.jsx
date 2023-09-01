@@ -34,9 +34,9 @@ function Requests() {
 
         {
           question: "Size",
-          placeholder: "Size",
+          placeholder: "Ex: '5.5x8.5cm'",
           options: "",
-          type: "number",
+          type: "text",
         },
         {
           question: "Paper",
@@ -53,6 +53,11 @@ function Requests() {
         { question: "With UV?", options: "", type: "checkbox" },
         {
           question: "With cellophane?",
+          options: "",
+          type: "checkbox",
+        },
+        {
+          question: "Die cutting",
           options: "",
           type: "checkbox",
         },
@@ -98,9 +103,9 @@ function Requests() {
         },
         {
           question: "Size",
-          placeholder: "Size",
+          placeholder: "Ex: '5.5x8.5cm'",
           options: "",
-          type: "number",
+          type: "text",
         },
         {
           question: "Paper",
@@ -164,9 +169,9 @@ function Requests() {
 
         {
           question: "Size",
-          placeholder: "Size",
+          placeholder: "Ex: '5.5x8.5cm'",
           options: "",
-          type: "number",
+          type: "text",
         },
         {
           question: "Paper",
@@ -213,9 +218,9 @@ function Requests() {
 
         {
           question: "Size",
-          placeholder: "Size",
+          placeholder: "Ex: '5.5x8.5cm'",
           options: "",
-          type: "number",
+          type: "text",
         },
         {
           question: "Paper",
@@ -265,9 +270,9 @@ function Requests() {
         },
         {
           question: "Size",
-          placeholder: "Size",
+          placeholder: "Ex: '5.5x8.5cm'",
           options: "",
-          type: "number",
+          type: "text",
         },
         {
           question: "Paper",
@@ -312,9 +317,9 @@ function Requests() {
 
         {
           question: "Size",
-          placeholder: "Size",
+          placeholder: "Ex: '5.5x8.5cm'",
           options: "",
-          type: "number",
+          type: "text",
         },
         {
           question: "Number of Colors",
@@ -322,12 +327,18 @@ function Requests() {
           options: "",
           type: "number",
         },
+        {
+          question: "With perforation?",
+          options: "",
+          type: "checkbox",
+        },
 
         {
           question: "With numbering?",
           options: "",
           type: "checkbox",
         },
+
         {
           question: "Start numbering from",
           placeholder: "Start numbering from",
@@ -360,9 +371,9 @@ function Requests() {
 
         {
           question: "Size",
-          placeholder: "Size",
+          placeholder: "Ex: '5.5x8.5cm'",
           options: "",
-          type: "number",
+          type: "text",
         },
         {
           question: "Paper",
@@ -396,9 +407,9 @@ function Requests() {
 
         {
           question: "Size",
-          placeholder: "Size",
+          placeholder: "Ex: '5.5x8.5cm'",
           options: "",
-          type: "number",
+          type: "text",
         },
         {
           question: "Paper",
@@ -432,9 +443,9 @@ function Requests() {
 
         {
           question: "Size",
-          placeholder: "Size",
+          placeholder: "Ex: '5.5x8.5cm'",
           options: "",
-          type: "number",
+          type: "text",
         },
         { question: "Additional information", options: "", type: "" },
       ],
@@ -461,16 +472,21 @@ function Requests() {
 
         {
           question: "Size",
-          placeholder: "Size",
-          options: "",
-          type: "number",
-        },
-        {
-          question: "Paper",
-          placeholder: "Paper description",
+          placeholder: "Ex: '5.5x8.5cm'",
           options: "",
           type: "text",
         },
+        {
+          question: "Glossy?",
+          options: "",
+          type: "checkbox",
+        },
+        {
+          question: "Matt?",
+          options: "",
+          type: "checkbox",
+        },
+
         { question: "Additional information", options: "", type: "" },
       ],
     },
@@ -496,16 +512,21 @@ function Requests() {
 
         {
           question: "Size",
-          placeholder: "Size",
-          options: "",
-          type: "number",
-        },
-        {
-          question: "Paper",
-          placeholder: "Paper description",
+          placeholder: "Ex: '5.5x8.5cm'",
           options: "",
           type: "text",
         },
+        {
+          question: "Glossy?",
+          options: "",
+          type: "checkbox",
+        },
+        {
+          question: "Matt?",
+          options: "",
+          type: "checkbox",
+        },
+
         { question: "Additional information", options: "", type: "" },
       ],
     },
@@ -530,23 +551,31 @@ function Requests() {
     }));
   };
   const handleSubmit = (event) => {
-    event.preventDefault();
     const form = document.getElementById("requestPrint");
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const number = document.getElementById("number").value;
+    const product = document.getElementById("product").value;
 
-    axios({
-      method: "POST",
-      url: "https://formbold.com/s/3Zglp",
-      data: formData,
-    })
-      .then((r) => {
-        alert("Thank you, your form was submitted.");
-        setFormData(() => ({}));
-        form.reset();
+    if (!name || !email || !number || !product) {
+      alert("Please fill out all required fields.");
+      return; // Stop further execution
+    } else {
+      axios({
+        method: "POST",
+        url: "https://formbold.com/s/3Oede",
+        data: formData,
       })
-      .catch((r) => {
-        console.log("error", r);
-        alert("An error occurred while submitting the form.");
-      });
+        .then((r) => {
+          alert("Thank you, your form was submitted.");
+          setFormData(() => ({}));
+          form.reset();
+        })
+        .catch((r) => {
+          console.log("error", r);
+          alert("An error occurred while submitting the form.");
+        });
+    }
   };
   return (
     <div>
@@ -562,7 +591,6 @@ function Requests() {
 
           <form
             id="requestPrint"
-            onSubmit={handleSubmit}
             style={{
               width: "100%",
               display: "flex",
@@ -572,83 +600,104 @@ function Requests() {
             <div className="formWrapper">
               <div className="formSection">
                 <label
+                  className="required"
                   style={{
                     color: "#6F7482",
-                    marginBottom: "15px",
                   }}
                 >
                   Name
-                  <input
-                    name="name"
-                    placeholder="Name"
-                    className="textField"
-                    id="name"
-                    type="text"
-                    onChange={handleInputChange}
-                  />
                 </label>
+                <input
+                  name="name"
+                  placeholder="Name"
+                  className="textField"
+                  style={{
+                    marginBottom: "15px",
+                  }}
+                  id="name"
+                  required
+                  type="text"
+                  onChange={handleInputChange}
+                />
+
                 <label
                   style={{
                     color: "#6F7482",
-                    marginBottom: "15px",
                   }}
+                  className="required"
                 >
                   Email
-                  <input
-                    id="email"
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    onChange={handleInputChange}
-                    className="textField"
-                  />
                 </label>
+                <input
+                  id="email"
+                  type="email"
+                  style={{
+                    marginBottom: "15px",
+                  }}
+                  name="email"
+                  required
+                  placeholder="Email"
+                  onChange={handleInputChange}
+                  className="textField"
+                />
               </div>
               <div className="formSection">
                 <label
+                  className="required"
                   style={{
                     color: "#6F7482",
-                    marginBottom: "15px",
                   }}
                 >
                   Phone Number
-                  <input
-                    type="text"
-                    name="Phone Number"
-                    placeholder="Phone Number"
-                    onChange={handleInputChange}
-                    className="textField"
-                  />
                 </label>
+                <input
+                  type="text"
+                  style={{
+                    marginBottom: "15px",
+                  }}
+                  name="Phone Number"
+                  placeholder="Phone Number"
+                  required
+                  id="number"
+                  onChange={handleInputChange}
+                  className="textField"
+                />
+
                 <label
+                  className="required"
                   style={{
                     color: "#6F7482",
                   }}
                 >
                   Products
-                  <select
-                    onChange={(event) => {
-                      handleInputChange(event);
-                      handleProductChange(event);
-                    }}
-                    name="Product"
-                    placeholder="Product"
-                    className="textField"
-                  >
-                    <option value="b_card">Business Card</option>
-                    <option value="brochure">Brochure</option>
-                    <option value="flyer">Flyer</option>
-                    <option value="p_bags">Paper Bags</option>
-                    <option value="folders">Folders</option>
-                    <option value="envelops">Envelops</option>
-                    <option value="booklet">Booklet</option>
-                    <option value="book">Book</option>
-                    <option value="stickers">Stickers</option>
-                    <option value="vinil">Vinil</option>
-                    <option value="b_forms">Business Forms</option>
-                    <option value="other">Other</option>
-                  </select>
                 </label>
+                <select
+                  onChange={(event) => {
+                    handleInputChange(event);
+                    handleProductChange(event);
+                  }}
+                  name="Product"
+                  style={{
+                    marginBottom: "15px",
+                  }}
+                  id="product"
+                  placeholder="Product"
+                  className="textField"
+                  required
+                >
+                  <option value="b_card">Business Card</option>
+                  <option value="brochure">Brochure</option>
+                  <option value="flyer">Flyer</option>
+                  <option value="p_bags">Paper Bags</option>
+                  <option value="folders">Folders</option>
+                  <option value="envelops">Envelops</option>
+                  <option value="booklet">Booklet</option>
+                  <option value="book">Book</option>
+                  <option value="stickers">Stickers</option>
+                  <option value="vinil">Vinil</option>
+                  <option value="b_forms">Business Forms</option>
+                  <option value="other">Other</option>
+                </select>
               </div>
             </div>
             <h4 style={{ marginTop: "20px", width: "100%" }}>

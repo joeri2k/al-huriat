@@ -7,7 +7,7 @@ function Slider() {
     <div>
       <Splide
         aria-label="printing press"
-        options={{ autoplay: true, pauseOnHover: false }}
+        options={{ autoplay: true, pauseOnHover: false, type: "loop" }}
       >
         <SplideSlide>
           <div

@@ -8,9 +8,10 @@ function Services() {
       <TopImage
         image_url="/assets/printing.webp"
         catching_phrase="Choose. Customize. Order."
-        guide="Our Services"
+        guide="Our Products"
         sub_phrase="Craft Your Business Identity in Just Three Simple Steps."
       />
+
       <div className="serviceGrid">
         <ServiceItem
           image_url="/assets/business-card.jpeg"
