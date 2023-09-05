@@ -321,12 +321,7 @@ function Requests() {
           options: "",
           type: "text",
         },
-        {
-          question: "Number of Colors",
-          placeholder: "Number of Colors",
-          options: "",
-          type: "number",
-        },
+
         {
           question: "With perforation?",
           options: "",
@@ -471,12 +466,6 @@ function Requests() {
         },
 
         {
-          question: "Size",
-          placeholder: "Ex: '5.5x8.5cm'",
-          options: "",
-          type: "text",
-        },
-        {
           question: "Glossy?",
           options: "",
           type: "checkbox",
@@ -486,7 +475,12 @@ function Requests() {
           options: "",
           type: "checkbox",
         },
-
+        {
+          question: "Size",
+          placeholder: "Ex: '5.5x8.5cm'",
+          options: "",
+          type: "text",
+        },
         { question: "Additional information", options: "", type: "" },
       ],
     },
@@ -511,12 +505,6 @@ function Requests() {
         },
 
         {
-          question: "Size",
-          placeholder: "Ex: '5.5x8.5cm'",
-          options: "",
-          type: "text",
-        },
-        {
           question: "Glossy?",
           options: "",
           type: "checkbox",
@@ -526,7 +514,12 @@ function Requests() {
           options: "",
           type: "checkbox",
         },
-
+        {
+          question: "Size",
+          placeholder: "Ex: '5.5x8.5cm'",
+          options: "",
+          type: "text",
+        },
         { question: "Additional information", options: "", type: "" },
       ],
     },
@@ -541,7 +534,10 @@ function Requests() {
       ],
     },
   };
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    "Number of Colors": 1,
+    Product: "b_card",
+  });
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -551,6 +547,7 @@ function Requests() {
     }));
   };
   const handleSubmit = (event) => {
+    event.preventDefault();
     const form = document.getElementById("requestPrint");
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
@@ -563,7 +560,7 @@ function Requests() {
     } else {
       axios({
         method: "POST",
-        url: "https://formbold.com/s/3Oede",
+        url: "https://formbold.com/s/3Zglp",
         data: formData,
       })
         .then((r) => {
@@ -683,6 +680,7 @@ function Requests() {
                   id="product"
                   placeholder="Product"
                   className="textField"
+                  defaultValue="b_card"
                   required
                 >
                   <option value="b_card">Business Card</option>

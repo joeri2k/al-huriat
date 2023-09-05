@@ -4,15 +4,11 @@ import TopImage from "../components/TopImage";
 import { GoogleMap, MarkerF, useLoadScript } from "@react-google-maps/api";
 
 function Contact() {
-  const center = useMemo(() => ({ lat: 33.88863, lng: 35.49548 }), []);
+  const center = useMemo(() => ({ lat: 33.889404, lng: 35.525032 }), []);
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY,
   });
-  const [inputs, setInputs] = useState({
-    email: "",
-    name: "",
-    message: "",
-  });
+  const [inputs, setInputs] = useState({ message: "" });
   const handleOnChange = (event) => {
     event.persist();
     setInputs((prev) => ({
@@ -22,24 +18,31 @@ function Contact() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    const form = document.getElementById("contactUs");
+    const name = document.getElementById("cName").value;
+    const email = document.getElementById("cEmail").value;
+    const number = document.getElementById("cNumber").value;
+    const message = document.getElementById("message").value;
 
-    axios({
-      method: "POST",
-      url: "https://formbold.com/s/obqE8",
-      data: inputs,
-    })
-      .then((r) => {
-        alert("Thank you, your form was submitted.");
-        setInputs(() => ({
-          email: "",
-          name: "",
-          message: "",
-        }));
+    if (!name || !email || !number || message === "") {
+      alert("Please fill out all required fields.");
+      return; // Stop further execution
+    } else {
+      axios({
+        method: "POST",
+        url: "https://formbold.com/s/obqE8",
+        data: inputs,
       })
-      .catch((r) => {
-        console.log("error");
-        alert("An error occurred while submitting the form.");
-      });
+        .then((r) => {
+          alert("Thank you, your form was submitted.");
+          setInputs(() => ({ message: "" }));
+          form.reset();
+        })
+        .catch((r) => {
+          console.log("error");
+          alert("An error occurred while submitting the form.");
+        });
+    }
   };
 
   return (
@@ -125,59 +128,83 @@ function Contact() {
             <div className="contactContainer">
               <div className="formSection">
                 <label
+                  className="required"
                   style={{
                     color: "#6F7482",
-                    marginBottom: "15px",
                   }}
                 >
                   Name
-                  <input
-                    name="name"
-                    placeholder="Name"
-                    className="textField"
-                    onChange={handleOnChange}
-                    value={inputs.name}
-                    id="name"
-                    type="text"
-                  />
                 </label>
-
+                <input
+                  name="Name"
+                  style={{
+                    marginBottom: "15px",
+                  }}
+                  placeholder="Name"
+                  className="textField"
+                  onChange={handleOnChange}
+                  id="cName"
+                  type="text"
+                />
                 <label
+                  className="required"
                   style={{
                     color: "#6F7482",
-                    marginBottom: "15px",
                   }}
                 >
                   Email
-                  <input
-                    onChange={handleOnChange}
-                    value={inputs.email}
-                    id="email"
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    className="textField"
-                  />
                 </label>
+                <input
+                  onChange={handleOnChange}
+                  style={{
+                    marginBottom: "15px",
+                  }}
+                  id="cEmail"
+                  type="email"
+                  name="Email"
+                  placeholder="Email"
+                  className="textField"
+                />
+                <label
+                  className="required"
+                  style={{
+                    color: "#6F7482",
+                  }}
+                >
+                  Phone Number
+                </label>
+                <input
+                  type="text"
+                  style={{
+                    marginBottom: "15px",
+                  }}
+                  name="Phone Number"
+                  placeholder="Phone Number"
+                  id="cNumber"
+                  className="textField"
+                />
               </div>
               <div className="formSection">
                 <label
+                  className="required"
                   style={{
                     color: "#6F7482",
-                    marginBottom: "15px",
                   }}
                 >
                   Message
-                  <textarea
-                    onChange={handleOnChange}
-                    value={inputs.message}
-                    id="message"
-                    name="message"
-                    placeholder="Type your message"
-                    rows={5}
-                    className="textField"
-                  />
                 </label>
+                <textarea
+                  onChange={handleOnChange}
+                  style={{
+                    marginBottom: "15px",
+                  }}
+                  id="message"
+                  name="Message"
+                  value={inputs.message}
+                  placeholder="Type your message"
+                  rows={5}
+                  className="textField"
+                />
               </div>
             </div>
             <button className="submitButton" type="submit" value="Submit">
