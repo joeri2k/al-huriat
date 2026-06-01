@@ -1,17 +1,17 @@
-import { useState } from "react";
 import * as React from "react";
+import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Requests from "./pages/Request";
+import Contact from "./pages/Contact";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <>
+    <HelmetProvider>
       <React.StrictMode>
         <Router>
           <Header />
@@ -24,7 +24,7 @@ function App() {
           </Routes>
         </Router>
       </React.StrictMode>
-    </>
+    </HelmetProvider>
   );
 }
 

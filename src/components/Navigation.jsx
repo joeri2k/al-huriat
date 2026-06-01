@@ -1,19 +1,25 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const expand = "lg";
 
-function Navigation(props) {
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Products" },
+  { href: "/request-printing", label: "Printing Request" },
+  { href: "/contact-us", label: "Contact Us" },
+];
+
+function Navigation() {
   const location = useLocation();
 
   return (
-    <div className="navContainer">
+    <nav className="navContainer" aria-label="Primary">
       <div className="navBox">
-        <Navbar key={expand} expand={expand}>
+        <Navbar key={expand} expand={expand} variant="dark">
           <Container fluid>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
@@ -28,50 +34,25 @@ function Navigation(props) {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link className="navButton" href="/">
-                    Home
-                    {location.pathname === "/" && (
-                      <div className="navMark"></div>
-                    )}
-                  </Nav.Link>
-                  <Nav.Link className="navButton" href="/services">
-                    Products
-                    {location.pathname === "/services" && (
-                      <div className="navMark"></div>
-                    )}
-                  </Nav.Link>
-                  <Nav.Link className="navButton" href="/request-printing">
-                    Printing Request
-                    {location.pathname === "/request-printing" && (
-                      <div className="navMark"></div>
-                    )}
-                  </Nav.Link>
-                  <Nav.Link className="navButton" href="/contact-us">
-                    Contact Us
-                    {location.pathname === "/contact-us" && (
-                      <div className="navMark"></div>
-                    )}
-                  </Nav.Link>
-                  {/* <NavDropdown
-                  title="Dropdown"
-                  id={`offcanvasNavbarDropdown-expand-${expand}`}
-                >
-                  <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">
-                    Something else here
-                  </NavDropdown.Item>
-                </NavDropdown> */}
+                  {links.map(({ href, label }) => (
+                    <Nav.Link
+                      key={href}
+                      as={Link}
+                      to={href}
+                      className="navButton"
+                      aria-current={location.pathname === href ? "page" : undefined}
+                    >
+                      {label}
+                      {location.pathname === href && <span className="navMark" />}
+                    </Nav.Link>
+                  ))}
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
         </Navbar>
       </div>
-    </div>
+    </nav>
   );
 }
 

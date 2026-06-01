@@ -1,20 +1,26 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import Slider from "../components/Slider";
 
 function Home() {
   return (
-    <div>
-      <div style={{ height: "520px" }}>
+    <main>
+      <Helmet>
+        <title>Al Huriat Printing Press — Beirut, Lebanon | Since 1960</title>
+        <meta
+          name="description"
+          content="Al Huriat Printing Press has served Lebanese and international clients since 1960. Offset and digital printing for business cards, brochures, books, packaging, and more."
+        />
+      </Helmet>
+      <div style={{ height: "clamp(380px, 56vw, 560px)" }}>
         <Slider />
       </div>
-      <div className="homeContainer">
+      <section className="homeContainer" aria-labelledby="overview-heading">
         <div className="homeBox">
           <div className="overviewBox">
-            <h1 style={{ fontWeight: "600", marginBottom: "20px" }}>
-              Our Company Overview
-            </h1>
+            <h2 id="overview-heading">Our Company Overview</h2>
             <p>
-              Al Huriat Printing Press was established in 1960 in Beirut -
+              Al Huriat Printing Press was established in 1960 in Beirut —
               Achrafieh with the aim of servicing clients and companies from all
               industries. The press continued its activities during the civil
               war period without any interruption and established itself in the
@@ -37,10 +43,17 @@ function Home() {
               to date machinery.
             </p>
           </div>
-          <img src="/assets/printing.webp" className="homeImage" />
+          <img
+            src="/assets/printing.webp"
+            className="homeImage"
+            alt="Al Huriat Printing Press workshop"
+            loading="lazy"
+            width="600"
+            height="333"
+          />
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 

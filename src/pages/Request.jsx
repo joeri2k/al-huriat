@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import TopImage from "../components/TopImage";
 import Questions from "../components/Questions";
 import axios from "axios";
@@ -575,150 +576,114 @@ function Requests() {
     }
   };
   return (
-    <div>
+    <main>
+      <Helmet>
+        <title>Request a Quote — Al Huriat Printing Press</title>
+        <meta
+          name="description"
+          content="Request a custom printing quote from Al Huriat. Tell us about your project — quantity, paper, colors, finishing — and we'll get back to you."
+        />
+      </Helmet>
       <TopImage
         image_url="/assets/printing.webp"
         catching_phrase="Ready to get your next project started?"
         guide="Requests"
         sub_phrase="From concept to finished product, your project is our priority."
       />
-      <div className="formContainer">
+      <section className="formContainer" aria-labelledby="request-heading">
         <div className="formBox">
-          <h1 style={{ fontWeight: "600" }}>Requests</h1>
+          <div className="formCard">
+            <h1 id="request-heading">Requests</h1>
+            <p style={{ marginBottom: 24 }}>
+              Tell us about your project and we'll get back to you with a quote.
+            </p>
 
-          <form
-            id="requestPrint"
-            style={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <div className="formWrapper">
-              <div className="formSection">
-                <label
-                  className="required"
-                  style={{
-                    color: "#6F7482",
-                  }}
-                >
-                  Name
-                </label>
-                <input
-                  name="name"
-                  placeholder="Name"
-                  className="textField"
-                  style={{
-                    marginBottom: "15px",
-                  }}
-                  id="name"
-                  required
-                  type="text"
-                  onChange={handleInputChange}
-                />
+            <form
+              id="requestPrint"
+              style={{ width: "100%", display: "flex", flexDirection: "column" }}
+            >
+              <div className="formWrapper">
+                <div className="formSection">
+                  <label className="required" htmlFor="name">Name</label>
+                  <input
+                    name="name"
+                    placeholder="Name"
+                    className="textField"
+                    id="name"
+                    required
+                    type="text"
+                    onChange={handleInputChange}
+                  />
 
-                <label
-                  style={{
-                    color: "#6F7482",
-                  }}
-                  className="required"
-                >
-                  Email
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  style={{
-                    marginBottom: "15px",
-                  }}
-                  name="email"
-                  required
-                  placeholder="Email"
-                  onChange={handleInputChange}
-                  className="textField"
-                />
+                  <label className="required" htmlFor="email">Email</label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="Email"
+                    onChange={handleInputChange}
+                    className="textField"
+                  />
+                </div>
+                <div className="formSection">
+                  <label className="required" htmlFor="number">Phone Number</label>
+                  <input
+                    type="tel"
+                    name="Phone Number"
+                    placeholder="Phone Number"
+                    required
+                    id="number"
+                    onChange={handleInputChange}
+                    className="textField"
+                  />
+
+                  <label className="required" htmlFor="product">Products</label>
+                  <select
+                    onChange={(event) => {
+                      handleInputChange(event);
+                      handleProductChange(event);
+                    }}
+                    name="Product"
+                    id="product"
+                    className="textField"
+                    defaultValue="b_card"
+                    required
+                  >
+                    <option value="b_card">Business Card</option>
+                    <option value="brochure">Brochure</option>
+                    <option value="flyer">Flyer</option>
+                    <option value="p_bags">Paper Bags</option>
+                    <option value="folders">Folders</option>
+                    <option value="envelops">Envelops</option>
+                    <option value="booklet">Booklet</option>
+                    <option value="book">Book</option>
+                    <option value="stickers">Stickers</option>
+                    <option value="vinil">Vinil</option>
+                    <option value="b_forms">Business Forms</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
               </div>
-              <div className="formSection">
-                <label
-                  className="required"
-                  style={{
-                    color: "#6F7482",
-                  }}
-                >
-                  Phone Number
-                </label>
-                <input
-                  type="text"
-                  style={{
-                    marginBottom: "15px",
-                  }}
-                  name="Phone Number"
-                  placeholder="Phone Number"
-                  required
-                  id="number"
-                  onChange={handleInputChange}
-                  className="textField"
-                />
-
-                <label
-                  className="required"
-                  style={{
-                    color: "#6F7482",
-                  }}
-                >
-                  Products
-                </label>
-                <select
-                  onChange={(event) => {
-                    handleInputChange(event);
-                    handleProductChange(event);
-                  }}
-                  name="Product"
-                  style={{
-                    marginBottom: "15px",
-                  }}
-                  id="product"
-                  placeholder="Product"
-                  className="textField"
-                  defaultValue="b_card"
-                  required
-                >
-                  <option value="b_card">Business Card</option>
-                  <option value="brochure">Brochure</option>
-                  <option value="flyer">Flyer</option>
-                  <option value="p_bags">Paper Bags</option>
-                  <option value="folders">Folders</option>
-                  <option value="envelops">Envelops</option>
-                  <option value="booklet">Booklet</option>
-                  <option value="book">Book</option>
-                  <option value="stickers">Stickers</option>
-                  <option value="vinil">Vinil</option>
-                  <option value="b_forms">Business Forms</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-            </div>
-            <h4 style={{ marginTop: "20px", width: "100%" }}>
-              Fill in your details:
-            </h4>
-            <Questions
-              product={products[product]}
-              handleChange={handleInputChange}
-            />
-            <input
-              className="submitButton"
-              type="submit"
-              value="Submit"
-              // onClick={(event) => {
-              //   event.preventDefault();
-              //   window.open(urlText, "_self");
-              // }}
-              onClick={handleSubmit}
-            />
-          </form>
+              <h4 style={{ marginTop: 28, marginBottom: 16, width: "100%" }}>
+                Fill in your details:
+              </h4>
+              <Questions
+                product={products[product]}
+                handleChange={handleInputChange}
+              />
+              <button
+                className="submitButton"
+                type="submit"
+                onClick={handleSubmit}
+              >
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 

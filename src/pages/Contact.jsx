@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import axios from "axios";
 import TopImage from "../components/TopImage";
 
@@ -41,24 +42,24 @@ function Contact() {
   };
 
   return (
-    <div>
+    <main>
+      <Helmet>
+        <title>Contact Us — Al Huriat Printing Press, Beirut</title>
+        <meta
+          name="description"
+          content="Get in touch with Al Huriat Printing Press in New Rawda, Beirut. Call +961 1 681 902 or +961 70 195 857, or use our contact form."
+        />
+      </Helmet>
       <TopImage
         image_url="/assets/printing.webp"
         catching_phrase="Ready to get your next project started?"
         guide="Contact us"
         sub_phrase="From concept to finished product, your project is our priority."
       />
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          width: "100%",
-          height: "40%",
-        }}
-      >
+      <section className="locationSection" aria-labelledby="location-heading">
         <div className="locationBox">
           <div style={{ width: "100%" }}>
-            <h1 style={{ fontWeight: "600" }}>Our Location</h1>
+            <h2 id="location-heading">Our Location</h2>
             <p>
               However you'd like to work with us, we're ready. This site
               includes all the tools you need if you prefer to stay in your
@@ -72,7 +73,6 @@ function Contact() {
                 href="https://www.google.com/maps/dir/?api=1&destination=33.877885,35.553651"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: "#bc274f" }}
               >
                 here
               </a>{" "}
@@ -80,28 +80,11 @@ function Contact() {
             </p>
           </div>
         </div>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          width: "100%",
-          height: "40%",
-          backgroundColor: "#87cefa",
-        }}
-      >
-        <div
-          style={{
-            paddingTop: "90px",
-            paddingBottom: "90px",
-            width: "70%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-          }}
-        >
-          <div style={{ width: "85%" }}>
-            <h1 style={{ fontWeight: "600" }}>Contact Us</h1>
+      </section>
+      <section className="contactFormSection" aria-labelledby="contact-heading">
+        <div className="contactInner">
+          <div className="contactIntro">
+            <h2 id="contact-heading">Contact Us</h2>
             <p>
               Have a comment, a question, a concern or just want to share
               something interesting? We'd love to hear from you. Please submit
@@ -111,57 +94,27 @@ function Contact() {
           <form onSubmit={handleSubmit} id="contactUs">
             <div className="contactContainer">
               <div className="formSection">
-                <label
-                  className="required"
-                  style={{
-                    color: "#6F7482",
-                  }}
-                >
-                  Name
-                </label>
+                <label className="required" htmlFor="cName">Name</label>
                 <input
                   name="Name"
-                  style={{
-                    marginBottom: "15px",
-                  }}
                   placeholder="Name"
                   className="textField"
                   onChange={handleOnChange}
                   id="cName"
                   type="text"
                 />
-                <label
-                  className="required"
-                  style={{
-                    color: "#6F7482",
-                  }}
-                >
-                  Email
-                </label>
+                <label className="required" htmlFor="cEmail">Email</label>
                 <input
                   onChange={handleOnChange}
-                  style={{
-                    marginBottom: "15px",
-                  }}
                   id="cEmail"
                   type="email"
                   name="Email"
                   placeholder="Email"
                   className="textField"
                 />
-                <label
-                  className="required"
-                  style={{
-                    color: "#6F7482",
-                  }}
-                >
-                  Phone Number
-                </label>
+                <label className="required" htmlFor="cNumber">Phone Number</label>
                 <input
-                  type="text"
-                  style={{
-                    marginBottom: "15px",
-                  }}
+                  type="tel"
                   name="Phone Number"
                   placeholder="Phone Number"
                   id="cNumber"
@@ -169,35 +122,25 @@ function Contact() {
                 />
               </div>
               <div className="formSection">
-                <label
-                  className="required"
-                  style={{
-                    color: "#6F7482",
-                  }}
-                >
-                  Message
-                </label>
+                <label className="required" htmlFor="message">Message</label>
                 <textarea
                   onChange={handleOnChange}
-                  style={{
-                    marginBottom: "15px",
-                  }}
                   id="message"
                   name="Message"
                   value={inputs.message}
                   placeholder="Type your message"
-                  rows={5}
+                  rows={6}
                   className="textField"
                 />
               </div>
             </div>
-            <button className="submitButton" type="submit" value="Submit">
+            <button className="submitButton" type="submit">
               Submit
             </button>
           </form>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 

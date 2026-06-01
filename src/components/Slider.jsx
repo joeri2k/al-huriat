@@ -11,16 +11,18 @@ function Slider() {
       >
         <SplideSlide>
           <div
-            className="imageStyle"
+            className="sliderImage"
             style={{ backgroundImage: 'url("/assets/color.jpeg")' }}
+            role="img"
+            aria-label="Color printing samples"
           ></div>
         </SplideSlide>
         <SplideSlide>
           <div
-            className="imageStyle"
-            style={{
-              backgroundImage: 'url("/assets/lamp.jpeg")',
-            }}
+            className="sliderImage"
+            style={{ backgroundImage: 'url("/assets/lamp.jpeg")' }}
+            role="img"
+            aria-label="Printing press workshop"
           ></div>
         </SplideSlide>
       </Splide>
