@@ -1,13 +1,8 @@
-import { useMemo, React, useState } from "react";
+import { React, useState } from "react";
 import axios from "axios";
 import TopImage from "../components/TopImage";
-import { GoogleMap, MarkerF, useLoadScript } from "@react-google-maps/api";
 
 function Contact() {
-  const center = useMemo(() => ({ lat: 33.889404, lng: 35.525032 }), []);
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY,
-  });
   const [inputs, setInputs] = useState({ message: "" });
   const handleOnChange = (event) => {
     event.persist();
@@ -62,7 +57,7 @@ function Contact() {
         }}
       >
         <div className="locationBox">
-          <div style={{ width: "50%" }}>
+          <div style={{ width: "100%" }}>
             <h1 style={{ fontWeight: "600" }}>Our Location</h1>
             <p>
               However you'd like to work with us, we're ready. This site
@@ -74,26 +69,15 @@ function Contact() {
             <p>
               Click{" "}
               <a
-                href="https://goo.gl/maps/2enSvsjFBUygmSeeA"
+                href="https://www.google.com/maps/dir/?api=1&destination=33.877885,35.553651"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{ color: "#bc274f" }}
               >
                 here
               </a>{" "}
               for directions
             </p>
-          </div>
-          <div style={{ height: "100%", width: "45%" }}>
-            {!isLoaded ? (
-              <h1>Loading...</h1>
-            ) : (
-              <GoogleMap
-                mapContainerClassName="map-container"
-                center={center}
-                zoom={10}
-              >
-                <MarkerF position={center} />
-              </GoogleMap>
-            )}
           </div>
         </div>
       </div>
